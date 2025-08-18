@@ -2,6 +2,7 @@ import Logo from '@/assets/logo.png';
 import { MainHeaderBackground } from './main-header-background';
 import Link from 'next/link';
 import { NavLink } from './nav-link';
+import Image from 'next/image';
 export function MainHeader() {
   return (
     <>
@@ -11,9 +12,10 @@ export function MainHeader() {
           href={'/'}
           className="flex items-center justify-center gap-8 text-[#ddd6cb] font-bold traking-[0.15rem] uppercase text-2xl"
         >
-          <img
-            src={Logo.src}
+          <Image
+            src={Logo}
             alt="Logo"
+            priority
             className="w-20 h-20 object-contain drop-shadow-[0_0_0.75rem_rgba(0,0,0,0.5)]"
           />
           NextLevel Food

@@ -32,4 +32,14 @@ body {
   .gradient-text-active {
     @apply active:bg-gradient-to-r active:from-[#ff8a05] active:to-[#f9b331] active:bg-clip-text active:text-transparent;
   }
+  .gradient-text {
+    @apply bg-gradient-to-r from-[#ff8a05] to-[#f9b331] bg-clip-text text-transparent;
+  }
+  .hero-btn {
+    @apply inline-block py-[0.5rem] px-[1rem] bg-gradient-to-r from-[#f9572a] to-[#ff9b05] font-bold text-white hover:bg-gradient-to-r hover:from-[#fd4715] hover:to-[#f9b241] rounded-md;
+  }
+
+  .hero-btn-transparent {
+    @apply inline-block py-[0.5rem] px-[1rem] bg-transparent text-[#f9b241] font-normal;
+  }
 }
