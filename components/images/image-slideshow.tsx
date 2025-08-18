@@ -37,7 +37,10 @@ export default function ImageSlideshow() {
   return (
     <div className="relative w-full h-full rounded-[8px] overflow-hidden shadow-[0_0_0.5rem_rgba(0,0,0,0.5)]">
       {images.map((image, index) => (
-        <div className="relative w-full h-full rounded-[8px] overflow-hidden shadow-[0_0_0.5rem_rgba(0,0,0,0.5)]">
+        <div
+          key={index}
+          className="relative w-full h-full rounded-[8px] overflow-hidden shadow-[0_0_0.5rem_rgba(0,0,0,0.5)]"
+        >
           {images.map((image, index) => (
             <Image
               key={index}
