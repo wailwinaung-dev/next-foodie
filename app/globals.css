@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
   --background: #ffffff;
@@ -23,4 +23,13 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .gradient-text-hover {
+    @apply hover:bg-gradient-to-r hover:from-[#ff8a05] hover:to-[#f9b331] hover:bg-clip-text hover:text-transparent hover:[text-shadow:0_0_18px_rgba(248,190,42,0.8)];
+  }
+  .gradient-text-active {
+    @apply active:bg-gradient-to-r active:from-[#ff8a05] active:to-[#f9b331] active:bg-clip-text active:text-transparent;
+  }
 }
