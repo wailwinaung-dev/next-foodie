@@ -1,3 +1,4 @@
+import ImageSlideshow from '@/components/images/image-slideshow';
 import Link from 'next/link';
 
 export default function Home() {
@@ -5,7 +6,9 @@ export default function Home() {
     <>
       <header className="flex gap-12 my-12 mx-auto w-[90%]">
         {/* Slide Show */}
-        <div className="w-[40rem] h-[25rem]"></div>
+        <div className="w-[40rem] h-[25rem]">
+          <ImageSlideshow />
+        </div>
         {/*Hero and action*/}
         <div>
           <div className="text-[#ddd6cb] text-[1.5rem]">
