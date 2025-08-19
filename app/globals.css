@@ -54,6 +54,10 @@ body {
   .error p {
     @apply text-[1.5rem] font-[500] text-[#ddd8d8];
   }
+
+  .form-input {
+    @apply block w-full py-[0.5rem] px-[1rem] rounded-[4px] border border-[#454952] bg-[#1c2027] text-[1.25rem] text-[#ddd6cb] focus:outline-[#f99f2a] focus:bg-[#1f252d];
+  }
 }
 
 @keyframes fade-slide-in-from-left {
