@@ -13,7 +13,12 @@ export interface Meal {
   creator_email: string;
 }
 
-export async function getMeals(): Promise<Meal[]> {
-  await new Promise((resolve) => setTimeout(resolve, 2000));
+export function getMeals(): Meal[] {
   return db.prepare('SELECT * FROM meals').all() as Meal[];
+}
+
+export function getMeal(slug: string) {
+  return db
+    .prepare('SELECT * FROM meals WHERE slug = ?')
+    .get(slug) as Meal | null;
 }
