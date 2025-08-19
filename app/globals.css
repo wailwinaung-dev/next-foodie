@@ -42,4 +42,16 @@ body {
   .hero-btn-transparent {
     @apply inline-block py-[0.5rem] px-[1rem] bg-transparent text-[#f9b241] font-normal;
   }
+
+  .error {
+    @apply mt-[5rem] text-center;
+  }
+
+  .error h1 {
+    @apply text-[5rem] font-[900] text-[#262626] uppercase bg-gradient-to-r from-[#f9572a] to-[#ffc905] bg-clip-text text-transparent bg-cover bg-center;
+  }
+
+  .error p {
+    @apply text-[1.5rem] font-[500] text-[#ddd8d8];
+  }
 }
