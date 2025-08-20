@@ -3,12 +3,13 @@ import { notFound } from 'next/navigation';
 
 import { getMeal } from '@/lib/meals';
 
-export default function MealDetailsPage({
+export default async function MealDetailsPage({
   params
 }: {
-  params: { mealSlug: string };
+  params: Promise<{ mealSlug: string }>;
 }) {
-  const meal = getMeal(params.mealSlug);
+  const { mealSlug } = await params;
+  const meal = getMeal(mealSlug);
 
   if (!meal) {
     notFound();
