@@ -58,6 +58,10 @@ body {
   .form-input {
     @apply block w-full py-[0.5rem] px-[1rem] rounded-[4px] border border-[#454952] bg-[#1c2027] text-[1.25rem] text-[#ddd6cb] focus:outline-[#f99f2a] focus:bg-[#1f252d];
   }
+
+  .form-lael {
+    @apply block mb-[0.5rem] text-[1rem] uppercase text-[#b3aea5] font-bold;
+  }
 }
 
 @keyframes fade-slide-in-from-left {

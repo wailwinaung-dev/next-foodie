@@ -1,3 +1,6 @@
+import ImagePicker from '@/components/meals/image-picker';
+import { shareMeal } from '@/lib/action';
+
 export default function ShareMealPage() {
   return (
     <>
@@ -7,36 +10,74 @@ export default function ShareMealPage() {
         </h1>
         <p>Or any other meal you feel needs sharing!</p>
       </header>
-      <main className="w-[90%] max-w-[75rem] my-3rem mx-auto">
-        <form className="max-w-[50rem]">
+      <main className="w-[90%] max-w-[75rem] my-[3rem] mx-auto">
+        <form
+          className="max-w-[50rem] flex flex-col gap-1.5"
+          action={shareMeal}
+        >
           <div className="flex gap-[1rem]">
             <p>
-              <FormLabel htmlFor="name">Your name</FormLabel>
-              <FormInput type="text" id="name" name="name" required />
+              <label htmlFor="name" className="form-label">
+                Your name
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                className="form-input"
+              />
             </p>
             <p>
-              <FormLabel htmlFor="email">Your email</FormLabel>
-              <FormInput type="email" id="email" name="email" required />
+              <label htmlFor="email" className="form-label">
+                Your email
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                className="form-input"
+              />
             </p>
           </div>
           <p>
-            <FormLabel htmlFor="title">Title</FormLabel>
-            <FormInput type="text" id="title" name="title" required />
+            <label htmlFor="title" className="form-label">
+              Title
+            </label>
+            <input
+              type="text"
+              id="title"
+              name="title"
+              required
+              className="form-input"
+            />
           </p>
           <p>
-            <FormLabel htmlFor="summary">Short Summary</FormLabel>
-            <FormInput type="text" id="summary" name="summary" required />
+            <label htmlFor="summary" className="form-label">
+              Short Summary
+            </label>
+            <input
+              type="text"
+              id="summary"
+              name="summary"
+              required
+              className="form-input"
+            />
           </p>
           <p>
-            <FormLabel htmlFor="instructions">Instructions</FormLabel>
-            <FormTextArea
+            <label htmlFor="instructions" className="form-label">
+              Instructions
+            </label>
+            <textarea
               id="instructions"
               name="instructions"
               rows={10}
               required
-            />
+              className="form-input"
+            ></textarea>
           </p>
-          IMAGE PICKER
+          <ImagePicker label="Image" name="image" />
           <p className="text-right">
             <button className="hero-btn" type="submit">
               Share Meal
@@ -46,46 +87,4 @@ export default function ShareMealPage() {
       </main>
     </>
   );
-}
-
-function FormLabel({
-  htmlFor,
-  children
-}: {
-  htmlFor: string;
-  children: string;
-}) {
-  return (
-    <label
-      className="block mb-[0.5rem] text-[1rem] uppercase text-[#b3aea5] font-bold"
-      htmlFor={htmlFor}
-    >
-      {children}
-    </label>
-  );
-}
-
-function FormInput({
-  type,
-  id,
-  name,
-  required
-}: {
-  type: string;
-  id: string;
-  name: string;
-  required: boolean;
-}) {
-  return (
-    <input className="form-input" type={type} id={id} name={name} required />
-  );
-}
-
-function FormTextArea(props: {
-  id: string;
-  name: string;
-  required: boolean;
-  rows: number;
-}) {
-  return <textarea {...props} className="form-input"></textarea>;
 }
